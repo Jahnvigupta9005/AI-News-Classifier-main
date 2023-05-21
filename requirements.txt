@@ -1,0 +1,15 @@
+Flask
+Flask-RESTful
+Flask-SQLAlchemy
+gunicorn
+joblib
+numpy
+pytz
+scikit-learn
+scipy
+sklearn
+SQLAlchemy
+threadpoolctl
+urllib3
+Werkzeug
+spacy

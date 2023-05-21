@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  
+<link rel="stylesheet" href="/static/style.css">
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Tilt+Prism:wght@400,500,600" />
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat:wght@400,500,600,700,800" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>News Classifier</title>
+</head>
+
+<body>
+  <div class="form-container">
+    <form action="{{ url_for('predict')}}" method="post">
+      <h1 class="head1">NEWS CLASSIFIER</h1>
+      <p>There are 4 classifications: SPORTS, CRIME, SCIENCE AND BUSINESS</p>
+      <br>
+      <label for="sentence1">Sentence 1</label>
+      <input type="text" id="sentence1" name="sentence1" placeholder="Enter sentence 1..."
+        value="{{ request.form.get('sentence1', '') }}" required>
+      <label for="sentence1" class="green">{{ prediction[0] }}</label>
+      <br>
+
+      <label for="sentence2">Sentence 2</label>
+      <input type="text" id="sentence2" name="sentence2" placeholder="Enter sentence 2..."
+        value="{{ request.form.get('sentence2', '') }}" required>
+      <label for="sentence2" class="green">{{ prediction[1] }}</label>
+      <br>
+
+      <label for="sentence2">Sentence 3</label>
+      <input type="text" id="sentence3" name="sentence3" placeholder="Enter sentence 3..."
+        value="{{ request.form.get('sentence3', '') }}" required>
+      <label for="sentence3" class="green">{{ prediction[2] }}</label>
+      <br>
+
+      <label for="sentence2">Sentence 4</label>
+      <input type="text" id="sentence4" name="sentence4" required placeholder="Enter sentence 4..."
+        value="{{ request.form.get('sentence4', '') }}">
+      <label for="sentence3" class="green">{{ prediction[3] }}</label>
+      <br>
+
+      <div class="center">
+        <a href="/">Clear</a><br>
+        <button id="predict-button" type="submit">Submit</button>
+      </div>
+    </form>
+  </div>
+  <div class="center y" style="margin-top: 100px;">
+    <h2 class="head2">ABOUT</h2>
+    <div class="cent">
+      <p class="aboutpar">This is a web app that classifies news into 4 categories: Sports, Crime, Science, and Business
+        using a machine learning model trained on a dataset of 40000 news articles.
+        <br>The model was trained using the scikit-learn Python library using a naive Bayes classifier.
+        <br>The web app was deployed using Flask and Heroku.
+      </p>
+      <br>
+      <img src="/static/imgs/robot.png">
+    </div>
+    <blockquote>Please Note: The model is very weak, it's just for training purposes. The results may be inaccurate.</blockquote>
+  </div>
+</body>
+
+</html>
