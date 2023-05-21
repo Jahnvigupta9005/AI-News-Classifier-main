@@ -6,3 +6,7 @@ This is a web app that classifies news into 4 categories: Sports, Crime, Science
 
 The model was trained using the [scikit-learn](https://scikit-learn.org/) Python library using a naive Bayes classifier.
 ```
+
+<img src="screenshots/1.png">
+<img src="screenshots/2.png">
+<img src="screenshots/3.png">
